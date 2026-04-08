@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
+import { existsSync, mkdirSync } from 'fs';
 import authRoutes from './routes/auth.js';
 import projectRoutes from './routes/projects.js';
 import photoRoutes from './routes/photos.js';
@@ -9,11 +9,12 @@ import tagRoutes from './routes/tags.js';
 import checklistRoutes from './routes/checklists.js';
 import taskRoutes from './routes/tasks.js';
 
-dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors());
+if (!existsSync('uploads')) mkdirSync('uploads');
+
+app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 

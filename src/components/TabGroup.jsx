@@ -1,8 +1,16 @@
 export default function TabGroup({ tabs, activeTab, onChange }) {
   return (
-    <div className="flex items-center bg-primary-light rounded-lg p-2 gap-1">
+    <div className="inline-flex items-center bg-gray-100 rounded-lg p-1 gap-0.5">
       {tabs.map((tab) => (
-        <button key={tab.value} onClick={() => onChange(tab.value)} className={`px-3 py-1 rounded-lg text-xs font-semibold ${activeTab === tab.value ? 'bg-white text-text shadow-sm' : 'text-text-secondary hover:text-text'}`}>
+        <button
+          key={tab.value}
+          onClick={() => onChange(tab.value)}
+          className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
+            activeTab === tab.value
+              ? 'bg-white text-text shadow-sm'
+              : 'text-text-secondary hover:text-text'
+          }`}
+        >
           {tab.label}
         </button>
       ))}

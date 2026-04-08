@@ -16,16 +16,39 @@ nav::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); }
 
 @layer components {
   .btn-primary {
-    @apply bg-primary text-white rounded-lg px-4 h-10 text-[15px] font-normal hover:bg-primary-hover transition-colors flex items-center gap-2;
+    @apply bg-primary text-white rounded-lg px-4 h-10 text-[14px] font-medium hover:bg-primary-hover transition-colors flex items-center gap-2 cursor-pointer select-none whitespace-nowrap;
   }
   .btn-secondary {
-    @apply bg-white text-text border border-border rounded-lg px-4 h-10 text-sm hover:bg-gray-50 transition-colors flex items-center gap-2;
+    @apply bg-white text-text border border-border rounded-lg px-4 h-10 text-sm font-medium hover:bg-gray-50 transition-colors flex items-center gap-2 cursor-pointer select-none whitespace-nowrap;
   }
   .btn-ghost {
-    @apply bg-transparent text-text-secondary rounded-lg px-3 h-9 text-sm hover:bg-gray-100 transition-colors flex items-center gap-2;
+    @apply bg-transparent text-text-secondary rounded-lg px-3 h-9 text-sm hover:bg-gray-100 transition-colors flex items-center gap-2 cursor-pointer select-none whitespace-nowrap;
   }
-  .card { @apply bg-white rounded-lg border border-border; }
+  .card {
+    @apply bg-white rounded-xl border border-border shadow-sm;
+  }
   .input-field {
     @apply w-full h-10 px-3 text-sm border border-border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary placeholder:text-text-muted transition-all;
+  }
+  .page-title {
+    @apply text-2xl font-bold text-text;
+  }
+  .section-title {
+    @apply text-sm font-semibold text-text uppercase tracking-wider;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-blue {
+    @apply badge bg-blue-50 text-blue-700;
+  }
+  .badge-green {
+    @apply badge bg-green-50 text-green-700;
+  }
+  .badge-yellow {
+    @apply badge bg-yellow-50 text-yellow-700;
+  }
+  .badge-gray {
+    @apply badge bg-gray-100 text-gray-600;
   }
 }
